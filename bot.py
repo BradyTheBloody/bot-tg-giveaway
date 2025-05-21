@@ -1,7 +1,7 @@
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import random
-import os
 
 ADMIN_ID = int(os.environ["ADMIN_ID"])
 
