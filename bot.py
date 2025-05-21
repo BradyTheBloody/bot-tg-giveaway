@@ -1,6 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import random
+import os
 
 ADMIN_ID = int(os.environ["ADMIN_ID"])
 
@@ -37,9 +38,7 @@ async def estrai(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text("No participants to be drawn.")
 
-import os
 app = ApplicationBuilder().token(os.environ["BOT_TOKEN"]).build()
-
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("participate", participate))
